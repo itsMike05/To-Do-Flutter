@@ -5,7 +5,8 @@ import 'package:to_do/pages/homepage.dart';
 void main() async {
   // Initializing the Hive
   await Hive.initFlutter();
-  var dataBox = Hive.openBox("data_box");
+  // MAKE SURE TO ADD 'await' HERE !!!!!!!!!!!
+  var dataBox = await Hive.openBox('data_box');
 
   runApp(const MainApp());
 }
