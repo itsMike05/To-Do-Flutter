@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:to_do/pages/homepage.dart';
 
-void main() {
-  runApp(MainApp());
+void main() async {
+  // Initializing the Hive
+  await Hive.initFlutter();
+  var dataBox = Hive.openBox("data_box");
+
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -15,7 +20,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
-      home: Homepage(),
+      home: const Homepage(),
     );
   }
 }
