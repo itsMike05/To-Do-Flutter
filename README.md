@@ -1,3 +1,3 @@
-# to_do
+# Flutter To Do App!
 
-A new Flutter project.
+Because why not.
