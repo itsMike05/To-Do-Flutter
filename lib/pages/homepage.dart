@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/util/new_item_dialog.dart';
 import '../util/todo_item.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -30,10 +31,23 @@ class _HomepageState extends State<Homepage> {
   // Create a new item
   void saveNewItem() {
     setState(() {
-      toDoList.add([_controller.text, false]);
-      _controller.clear();
+      if (_controller.text.isNotEmpty) {
+        toDoList.add([_controller.text, false]);
+        _controller.clear();
+      } else {
+        Fluttertoast.showToast(
+            msg: "Please add some text!", toastLength: Toast.LENGTH_LONG);
+      }
     });
     Navigator.of(context).pop();
+  }
+
+  // Delete an existing item
+  void deleteItem(int index) {
+    setState(() {
+      toDoList.removeAt(index);
+      _controller.clear();
+    });
   }
 
   // Create a new todo tile
@@ -72,9 +86,11 @@ class _HomepageState extends State<Homepage> {
         itemCount: toDoList.length,
         itemBuilder: (context, index) {
           return ToDoItem(
-              taskName: toDoList[index][0],
-              taskCompleted: toDoList[index][1],
-              onChanged: (value) => checkBoxChanged(value, index));
+            taskName: toDoList[index][0],
+            taskCompleted: toDoList[index][1],
+            onChanged: (value) => checkBoxChanged(value, index),
+            deleteItem: (context) => deleteItem(index),
+          );
         },
       ),
     );
