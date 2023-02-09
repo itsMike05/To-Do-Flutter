@@ -5,8 +5,11 @@ class ToDoItem extends StatelessWidget {
   final bool taskCompleted;
   Function(bool?)? onChanged;
 
-  const ToDoItem(
-      {super.key, required this.taskName, required this.taskCompleted});
+  ToDoItem(
+      {super.key,
+      required this.taskName,
+      required this.taskCompleted,
+      required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +22,10 @@ class ToDoItem extends StatelessWidget {
         child: Row(
           children: [
             // Checkbox
-            Checkbox(value: true, onChanged: null),
+            Checkbox(value: taskCompleted, onChanged: onChanged),
             // Text
-            const Text(
-              "Finish this app!",
+            Text(
+              taskName,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           ],

@@ -24,7 +24,10 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
       body: ListView(
-        children: [ToDoItem()],
+        children: [
+          ToDoItem(taskName: "First", taskCompleted: false, onChanged: null),
+          ToDoItem(taskName: "Second", taskCompleted: true, onChanged: null)
+        ],
       ),
     );
   }
