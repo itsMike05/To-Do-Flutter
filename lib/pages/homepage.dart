@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../util/todo_item.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -13,6 +14,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
+        elevation: 5,
         title: const Center(
           child: Text(
             "TO DO",
@@ -20,6 +22,9 @@ class _HomepageState extends State<Homepage> {
                 fontWeight: FontWeight.w400, fontSize: 30, letterSpacing: 5),
           ),
         ),
+      ),
+      body: ListView(
+        children: [ToDoItem()],
       ),
     );
   }
