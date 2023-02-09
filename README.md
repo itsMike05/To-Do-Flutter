@@ -7,4 +7,4 @@ Technologies used:
 - Flutter
 - Hive (for the local database)
 - Flutter Slideable
-- 
+- FlutterToast
