@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/util/item_button.dart';
 
 class NewItemDialog extends StatelessWidget {
-  const NewItemDialog({super.key});
+  final controller;
+  const NewItemDialog({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -10,19 +12,23 @@ class NewItemDialog extends StatelessWidget {
       content: Container(
         height: 120,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // Get user input
             TextField(
-              decoration: InputDecoration(border: OutlineInputBorder()),
+              controller: controller,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), hintText: "Add a new item"),
             ),
 
             // Save / Cancel buttons
 
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ElevatedButton(onPressed: null, child: Text("Save")),
-                ElevatedButton(onPressed: null, child: Text("Cancel")),
+                ItemButton(buttonText: "Save", onPressed: () {}),
+                const SizedBox(width: 10),
+                ItemButton(buttonText: "Cancel", onPressed: () {})
               ],
             ),
           ],

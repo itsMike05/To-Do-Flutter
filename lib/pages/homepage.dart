@@ -10,6 +10,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final _controller = TextEditingController();
+
   // List of todo items (expandable in the future)
   List toDoList = [
     ["Thing 1", false],
@@ -30,7 +32,9 @@ class _HomepageState extends State<Homepage> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return NewItemDialog();
+        return NewItemDialog(
+          controller: _controller,
+        );
       },
     );
   }
