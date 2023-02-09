@@ -10,6 +10,17 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.yellow[200],
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            "TO DO",
+            style: TextStyle(
+                fontWeight: FontWeight.w400, fontSize: 30, letterSpacing: 5),
+          ),
+        ),
+      ),
+    );
   }
 }
