@@ -24,6 +24,9 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
+  // Create a new todo tile
+  void createNewItem() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +40,10 @@ class _HomepageState extends State<Homepage> {
                 fontWeight: FontWeight.w800, fontSize: 15, letterSpacing: 5),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: createNewItem,
+        child: const Icon(Icons.add),
       ),
       body: ListView.builder(
         itemCount: toDoList.length,
