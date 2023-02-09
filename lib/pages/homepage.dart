@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/util/new_item_dialog.dart';
 import '../util/todo_item.dart';
 
 class Homepage extends StatefulWidget {
@@ -25,7 +26,14 @@ class _HomepageState extends State<Homepage> {
   }
 
   // Create a new todo tile
-  void createNewItem() {}
+  void createNewItem() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return NewItemDialog();
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
