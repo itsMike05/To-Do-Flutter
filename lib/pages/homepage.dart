@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do/util/new_item_dialog.dart';
 import '../util/todo_item.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -11,6 +12,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final _dataBox = Hive.openBox('data_box');
   final _controller = TextEditingController();
 
   // List of todo items (expandable in the future)
