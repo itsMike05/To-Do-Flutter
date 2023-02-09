@@ -27,6 +27,15 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
+  // Create a new item
+  void saveNewItem() {
+    setState(() {
+      toDoList.add([_controller.text, false]);
+      _controller.clear();
+    });
+    Navigator.of(context).pop();
+  }
+
   // Create a new todo tile
   void createNewItem() {
     showDialog(
@@ -34,6 +43,8 @@ class _HomepageState extends State<Homepage> {
       builder: (BuildContext context) {
         return NewItemDialog(
           controller: _controller,
+          onSave: saveNewItem,
+          onCancel: () => Navigator.of(context).pop(),
         );
       },
     );
