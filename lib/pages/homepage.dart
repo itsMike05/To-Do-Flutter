@@ -9,6 +9,21 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  // List of todo items (expandable in the future)
+  List toDoList = [
+    ["Thing 1", false],
+    ["To do 2", true],
+    ["Last thing here", false]
+  ];
+
+  // Checkbox was tapped
+  void checkBoxChanged(bool? value, int index) {
+    setState(() {
+      // Reversing the checkbox state
+      toDoList[index][1] = !toDoList[index][1];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,17 +32,20 @@ class _HomepageState extends State<Homepage> {
         elevation: 5,
         title: const Center(
           child: Text(
-            "TO DO",
+            "YUP, ANOTHER TO DO APP",
             style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 30, letterSpacing: 5),
+                fontWeight: FontWeight.w800, fontSize: 15, letterSpacing: 5),
           ),
         ),
       ),
-      body: ListView(
-        children: [
-          ToDoItem(taskName: "First", taskCompleted: false, onChanged: null),
-          ToDoItem(taskName: "Second", taskCompleted: true, onChanged: null)
-        ],
+      body: ListView.builder(
+        itemCount: toDoList.length,
+        itemBuilder: (context, index) {
+          return ToDoItem(
+              taskName: toDoList[index][0],
+              taskCompleted: toDoList[index][1],
+              onChanged: (value) => checkBoxChanged(value, index));
+        },
       ),
     );
   }
