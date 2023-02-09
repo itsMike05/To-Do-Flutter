@@ -6,6 +6,7 @@ void main() async {
   // Initializing the Hive
   await Hive.initFlutter();
   // MAKE SURE TO ADD 'await' HERE !!!!!!!!!!!
+  // ignore: unused_local_variable
   var dataBox = await Hive.openBox('data_box');
 
   runApp(const MainApp());

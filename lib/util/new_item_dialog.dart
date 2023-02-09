@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/util/item_button.dart';
 
+// ignore: must_be_immutable
 class NewItemDialog extends StatelessWidget {
   VoidCallback onSave;
   VoidCallback onCancel;
 
-  final controller;
+  final TextEditingController controller;
   NewItemDialog(
       {super.key,
       required this.controller,
