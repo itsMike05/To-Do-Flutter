@@ -3,8 +3,8 @@
 Because why not 😀
 
 Technologies used:
-- Dart (duh)
+- Dart 
 - Flutter
 - Hive (for the local database)
-- Flutter Slideable
+- Flutter Slideable 
 - FlutterToast
