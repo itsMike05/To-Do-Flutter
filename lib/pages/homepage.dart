@@ -91,6 +91,7 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        elevation: 15,
         onPressed: createNewItem,
         child: const Icon(Icons.add),
       ),
