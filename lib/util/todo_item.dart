@@ -8,12 +8,13 @@ class ToDoItem extends StatelessWidget {
   Function(bool?)? onChanged;
   Function(BuildContext)? deleteItem;
 
-  ToDoItem(
-      {super.key,
-      required this.taskName,
-      required this.taskCompleted,
-      required this.onChanged,
-      required this.deleteItem});
+  ToDoItem({
+    super.key,
+    required this.taskName,
+    required this.taskCompleted,
+    required this.onChanged,
+    required this.deleteItem,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,8 @@ class ToDoItem extends StatelessWidget {
           children: [
             SlidableAction(
               onPressed: deleteItem,
-              icon: Icons.delete,
+              autoClose: true,
+              icon: Icons.delete_forever,
               backgroundColor: Colors.redAccent,
               borderRadius: BorderRadius.circular(15),
             )
@@ -40,9 +42,9 @@ class ToDoItem extends StatelessWidget {
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black,
-                  blurRadius: 2.0,
+                  blurRadius: 1.5,
                   spreadRadius: 0.0,
-                  offset: Offset(2.0, 2.0), // Bottom right shadow direction
+                  offset: Offset(1.5, 1.5), // Bottom right shadow direction
                 )
               ]),
           child: Row(
