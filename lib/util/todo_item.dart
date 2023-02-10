@@ -21,8 +21,10 @@ class ToDoItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
       child: Slidable(
+        // direction: Axis.horizontal is the default value, just here for testing
+        direction: Axis.horizontal,
         endActionPane: ActionPane(
-          motion: const ScrollMotion(),
+          motion: const StretchMotion(),
           children: [
             SlidableAction(
               onPressed: deleteItem,
