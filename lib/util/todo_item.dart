@@ -34,7 +34,9 @@ class ToDoItem extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(25.0),
           decoration: BoxDecoration(
-              color: Colors.yellow, borderRadius: BorderRadius.circular(15)),
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(15),
+              border: Border.all(color: Colors.black26)),
           child: Row(
             children: [
               // Checkbox
