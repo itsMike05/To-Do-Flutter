@@ -36,7 +36,7 @@ class ToDoItem extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(25.0),
           decoration: BoxDecoration(
-              color: taskCompleted ? Colors.amberAccent : Colors.yellow,
+              color: taskCompleted ? Colors.amber[500] : Colors.yellow,
               borderRadius: BorderRadius.circular(15),
               border: Border.all(color: Colors.black26),
               boxShadow: const [
@@ -56,14 +56,16 @@ class ToDoItem extends StatelessWidget {
                 activeColor: Colors.black,
               ),
               // Text
-              Text(
-                taskName,
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    decoration: taskCompleted
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none),
+              Expanded(
+                child: Text(
+                  taskName,
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      decoration: taskCompleted
+                          ? TextDecoration.lineThrough
+                          : TextDecoration.none),
+                ),
               ),
             ],
           ),

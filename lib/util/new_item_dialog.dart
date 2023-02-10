@@ -23,10 +23,12 @@ class NewItemDialog extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // Get user input
-            TextField(
-              controller: controller,
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(), hintText: "Add a new item"),
+            Expanded(
+              child: TextField(
+                controller: controller,
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(), hintText: "Add a new item"),
+              ),
             ),
 
             // Save / Cancel buttons
