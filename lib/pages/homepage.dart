@@ -46,7 +46,11 @@ class _HomepageState extends State<Homepage> {
         _controller.clear();
       } else {
         Fluttertoast.showToast(
-            msg: "Text field cannot be empty", toastLength: Toast.LENGTH_LONG);
+          msg: "Text field cannot be empty",
+          toastLength: Toast.LENGTH_LONG,
+          backgroundColor: Colors.yellow,
+          textColor: Colors.black87,
+        );
       }
     });
     Navigator.of(context).pop();
