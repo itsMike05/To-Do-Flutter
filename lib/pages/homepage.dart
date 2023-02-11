@@ -48,7 +48,8 @@ class _HomepageState extends State<Homepage> {
         Fluttertoast.showToast(
           msg: "Text field cannot be empty",
           toastLength: Toast.LENGTH_LONG,
-          backgroundColor: Colors.yellow,
+          fontSize: 16,
+          backgroundColor: Colors.yellowAccent,
           textColor: Colors.black87,
         );
       }
